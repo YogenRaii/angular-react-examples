@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="plunker"  >
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS Plunker</title>
+  <script>document.write('<base href="' + document.location + '" />');</script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+  Hello {{name}}!
+  
+  <ul >
+  <li ng-repeat="item in items">
+    <p>Always present: {{item.name}}</p>
+    <p>Loads later: {{item.lateLoader}} <span ng-bind="{{item.lateLoader}}"></span><i ng-hide="item.lateLoader"  class="icon icon-refresh icon-spin"><img src="images.gif"></i></p>
+  </li>
+</ul>
+</body>
+</html>
