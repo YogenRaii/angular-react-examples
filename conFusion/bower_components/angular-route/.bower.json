@@ -1,0 +1,12 @@
+{
+  "name": "angular-route",
+  "_cacheHeaders": {
+    "Last-Modified": "Thu, 01 Oct 2015 00:12:08 GMT",
+    "Content-Type": "application/x-javascript"
+  },
+  "main": "index.js",
+  "_source": "https://code.angularjs.org/1.4.7/angular-route.js",
+  "_target": "*",
+  "_originalSource": "https://code.angularjs.org/1.4.7/angular-route.js",
+  "_direct": true
+}

@@ -51,11 +51,11 @@ module.exports = function (grunt) {
     },
       // Filerev
     filerev: {
-        options: {
-            encoding: 'utf8',
-            algorithm: 'md5',
-            length: 20
-        },
+        // options: {
+        //     encoding: 'utf8',
+        //     algorithm: 'md5',
+        //     length: 20
+        // },
         release: {
             // filerev:release hashes(md5) all assets (images, js and css )
             // in dist directory
