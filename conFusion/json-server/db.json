@@ -215,5 +215,58 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "mychannel": "",
+      "firstName": "Shyamu",
+      "lastName": "Neupane",
+      "agree": false,
+      "email": "ygnrai@gmail.com",
+      "tel": {
+        "areaCode": "641",
+        "number": "6419808605"
+      },
+      "comments": "sss",
+      "id": 1
+    },
+    {
+      "mychannel": "",
+      "firstName": "Yogen",
+      "lastName": "Rai",
+      "agree": false,
+      "email": "yogen.rai.992@gmail.com",
+      "tel": {
+        "areaCode": "318",
+        "number": "3183484504"
+      },
+      "comments": "jlkk",
+      "id": 2
+    },
+    {
+      "mychannel": "Email",
+      "firstName": "Shyamu",
+      "lastName": "Neupane",
+      "agree": true,
+      "email": "ygnrai@gmail.com",
+      "tel": {
+        "areaCode": "641",
+        "number": "6419808605"
+      },
+      "comments": "ll",
+      "id": 3
+    },
+    {
+      "mychannel": "",
+      "firstName": "Shyamu",
+      "lastName": "Neupane",
+      "agree": false,
+      "email": "ygnrai@gmail.com",
+      "tel": {
+        "areaCode": "641",
+        "number": "6419808605"
+      },
+      "comments": "kljlkj nwe comment",
+      "id": 4
+    }
+  ]
 }
