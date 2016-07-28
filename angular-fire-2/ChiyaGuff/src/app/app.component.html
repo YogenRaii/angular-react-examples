@@ -1,0 +1,32 @@
+<h1>
+	{{title}}
+</h1>
+
+<div> {{ (af.auth | async)?.uid }} </div>
+  <button (click)="login()">Login</button>
+
+<ul>
+	<li *ngFor="let item of items | async">
+		{{item.text}}
+		<input type="text" #updatesize [value]="item.text" />
+		<button (click)="update(item.$key, updatesize.value)">Update</button>
+		<button (click)="deleteItem(item.$key)">Delete</button>
+	</li>
+</ul>
+<input type="text" #newitem />
+<button (click)="add(newitem.value)">Add</button>
+<button (click)="deleteEverything()">Delete All</button>
+
+
+<ul>
+    <li *ngFor="let item of messages | async">
+      {{ item.text }}
+    </li>
+  </ul>
+
+<div>
+    <h4>Filter by size</h4>
+    <button (click)="filterBy('small')">Small</button>
+    <button (click)="filterBy('medium')">Medium</button>
+    <button (click)="filterBy('large')">Large</button>
+  </div>
