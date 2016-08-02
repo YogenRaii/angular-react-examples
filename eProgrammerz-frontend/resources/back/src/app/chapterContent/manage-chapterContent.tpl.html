@@ -1,0 +1,118 @@
+
+<div class="row">
+	<h3 class="page-header">
+		<i class="fa fa-pencil"></i> Tutorial Contents <small><a
+			ui-sref="chapterContent({chapterId:chapterId})">ALL-CHAPTERS-CONTENTS</a>/
+			Add chapter</small>
+	</h3>
+	<div class="col-lg-12">
+		<section class="panel">
+			<header class="panel-heading">
+				<span class="em">Tutorial List </span> | <i class="fa fa-plus"></i><a
+					ui-sref="addChapterContent({langId:currentLangId})"><strong
+					style="color: blue;">Add Chapter</strong></a>
+
+			</header>
+			<div ng-show="success" class="alert alert-success">
+				<strong>{{success }}</strong>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-default">
+							<a ui-sref="chapterContent({chapterId:chapterId})">Go back</a>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div ng-hide="success" style="padding-top: 2%;">
+
+				<div ng-show="error" class="alert alert-danger">
+					<strong>{{error}}</strong>
+				</div>
+
+				<form class="form-horizontal" ng-submit="submitChapterContent()">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Title </label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="title"
+								ng-model="chapterContent.title" required="required">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Description </label>
+						<div class="col-sm-10">
+							<textarea id="desText" class="form-control ckeditor"
+								name="description" rows="15"></textarea>
+							<script>
+								// Replace the <textarea id="editor1"> with a CKEditor
+								// instance, using default configuration.
+								CKEDITOR.replace('desText');
+							</script>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<!-- image upload -->
+						<h4 class="control-label col-sm-2">Upload on file select</h4>
+						<button class="col-sm-2" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+							accept="image/*" ngf-max-height="10000" ngf-max-size="1MB">
+							Select File</button>
+						<span class="col-sm-1"> File:</span>
+						<div style="font: smaller">
+							{{f.name}} {{errFile.name}} {{errFile.$error}}
+							{{errFile.$errorParam}} <span class="progress"
+								ng-show="f.progress >= 0">
+								<span style="width: {{f.progress" ng-bind="f.progress + '%'"></span>
+							</span>
+						</div>
+						<div ng-bind-html="response | to_trusted"></div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-default">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
+
+</div>
+
+<!--Delete Modal -->
+<div class="portfolio-modal modal fade" id="deleteModal" tabindex="-1"
+	role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl"></div>
+			</div>
+		</div>
+		<div class="modal-header">
+			<h2 class="modal-title">Delete Content</h2>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<p class="delete-message">
+						<h3>Do you really want to delete the Chpater?</h3>
+						</p>
+						<div ng-show="deleteMsg" class="alert alert-success">
+							<strong>{{deleteMsg}}</strong>
+						</div>
+
+						<button type="button" class="btn btn-default"
+							ng-click="deleteChapterConfirm()">Delete</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							<i class="fa fa-times"></i> Close
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- end of delete modal -->

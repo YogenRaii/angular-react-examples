@@ -1,0 +1,15 @@
+<ul class="list-group">
+	<li ng-repeat="chapter in chapterContents track by $index" class="list-group-item">
+		<h4>{{chapter.title}}</h4>
+		<p ng-bind-html="chapter.description | to_trusted"></p>
+	</li>
+</ul>
+<span us-spinner="{radius:30, width:8, length: 16}"></span>
+
+<!-- <ul class="list-group">
+	<li class="list-group-item">
+		<h4>{{chapterContents.title}}</h4>
+		<p ng-bind-html="chapterContents.description | to_trusted"></p>
+	</li>
+</ul> 
+<span us-spinner="{radius:30, width:8, length: 16}"></span> -->
