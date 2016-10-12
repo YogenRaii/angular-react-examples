@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<div>
+		Emails:
+		<input type = "email" id = "email" name="email"/>
+	</div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+
+		$("#email").change(function(){
+			var emails = $("#email").val();
+			if(validateEmails(emails)){
+				console.log("ok");
+			}else{
+				console.log("not ok");
+			}
+		});
+
+		var validateEmail = function(value) {
+			var regex = /\S+@\S+\.\S+/;
+			return (regex.test(value)) ? true : false;
+		}
+
+		var validateEmails = function(string) {
+			var emails = string.split(',');
+
+			for(var i = 0;i < emails.length;i++) {
+				if(!validateEmail(emails[i])) {
+					return false;
+				}
+			}
+
+			return true;
+		}
+	});
+</script>
+</html>
+
