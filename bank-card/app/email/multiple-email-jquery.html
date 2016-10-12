@@ -24,7 +24,8 @@
 		});
 
 		var validateEmail = function(value) {
-			var regex = /\S+@\S+\.\S+/;
+			// var regex = /\S+@\S+\.\S+/;
+			var regex = /\S+@(fmr|fmrco|fmrlb).com/;
 			return (regex.test(value)) ? true : false;
 		}
 
