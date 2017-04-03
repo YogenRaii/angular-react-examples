@@ -15,6 +15,7 @@ import { RepoDetailComponent } from './github/repo-detail/repo-detail.component'
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import { FileUploadComponent} from './file-upload/file-upload.component';
+import { UserService } from './home/user.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FileUploadComponent} from './file-upload/file-upload.component';
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
-    GithubService
+    GithubService,
+    UserService
   ],
   bootstrap: [ AppComponent ]
 })
