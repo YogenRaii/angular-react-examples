@@ -10,6 +10,7 @@ angular.module('myApp.home', ['ngRoute','firebase'])
 }])
 
 .controller('HomeCtrl', ['$scope','$location','CommonProp','$firebaseAuth',function($scope,$location,CommonProp,$firebaseAuth) {
+    
     var loginObj = $firebaseAuth();
 
     $scope.user = {};

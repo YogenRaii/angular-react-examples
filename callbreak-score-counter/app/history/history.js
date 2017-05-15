@@ -10,6 +10,8 @@ angular.module('myApp.history', ['ngRoute','firebase'])
 }])
 
 .controller('HistoryCtrl', ['$scope','$location','$firebaseObject', '$firebaseAuth', function($scope,$location,$firebaseObject, $firebaseAuth) {
+  $scope.history = true;
+  
   $scope.mesg = 'Hello';
     var auth = $firebaseAuth();
     

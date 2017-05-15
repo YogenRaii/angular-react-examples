@@ -30,5 +30,14 @@
 }
 
 .custom-input {
+  width: 100%;
   border-width: 0px;
+}
+
+.sub-total {
+  background-color: aliceblue;
+}
+
+.lost-iter {
+  background-color: red;
 }

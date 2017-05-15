@@ -1,8 +1,9 @@
+<link href="blog.css" rel="stylesheet">
 <div class="blog-masthead">
   <div class="container">
     <nav class="blog-nav">
-      <a class="blog-nav-item active" href="#!/welcome">Home</a>
-      <a class="blog-nav-item " href="#!/history">Histroy</a>
+      <a class="blog-nav-item " ng-class="home? 'active':'' " href="#!/welcome">Home</a>
+      <a class="blog-nav-item " ng-class="history? 'active':'' "href="#!/history">Histroy</a>
       <a class="blog-nav-item " style="cursor:pointer;" ng-click="logout();">Logout</a>
     </nav>
   </div>

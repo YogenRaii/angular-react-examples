@@ -5,8 +5,8 @@
 <div class="blog-masthead">
   <div class="container">
     <nav class="blog-nav">
-      <a class="blog-nav-item active" href="#">Home</a>
-      <a class="blog-nav-item " href="#!/history">Histroy</a>
+      <a class="blog-nav-item" ng-class="home? 'active': '' " href="#">Home</a>
+      <a class="blog-nav-item " ng-class="history? 'active': '' "  href="#!/history">Histroy</a>
       <a class="blog-nav-item " style="cursor:pointer;" ng-click="logout();">Logout</a>
     </nav>
   </div>
@@ -28,12 +28,29 @@
     </thead>
     <tbody>
       <tr ng-repeat="score in [1,2,3,4] track by $index">
-        <td><input type="text" class="custom-input" name="player1_score{{$index + 1}}" placeholder="Score {{$index + 1}}"></td>
-        <td><input type="text" class="custom-input" name="player2_score{{$index + 1}}" placeholder="Score {{$index + 1}}"></td>
-        <td><input type="text" class="custom-input" name="player3_score{{$index + 1}}" placeholder="Score {{$index + 1}}"></td>
-        <td><input type="text" class="custom-input" name="player4_score{{$index + 1}}" placeholder="Score {{$index + 1}}"></td>
+        <td><input type="text" class="custom-input" name="player1_score{{$index + 1}}" ng-class="lostItr(scores[$index].player1) ? 'lost-iter': '' " ng-model="scores[$index].player1" ng-change="updateScore()" placeholder="Score {{$index + 1}}"></td>
+        <td><input type="text" class="custom-input" name="player2_score{{$index + 1}}" ng-class="lostItr(scores[$index].player1) ? 'lost-iter': '' " ng-model="scores[$index].player2" ng-change="updateScore()" placeholder="Score {{$index + 1}}"></td>
+        <td><input type="text" class="custom-input" name="player3_score{{$index + 1}}" ng-class="lostItr(scores[$index].player1) ? 'lost-iter': '' " ng-model="scores[$index].player3" ng-change="updateScore()" placeholder="Score {{$index + 1}}"></td>
+        <td><input type="text" class="custom-input" name="player4_score{{$index + 1}}" ng-class="lostItr(scores[$index].player1) ? 'lost-iter': '' " ng-model="scores[$index].player4" ng-change="updateScore()" placeholder="Score {{$index + 1}}"></td>
       </tr>
-
+      <tr class="sub-total">
+        <td ng-if="player1_scoreSub">{{player1_scoreSub}}</td>
+        <td ng-if="player2_scoreSub">{{player2_scoreSub}}</td>
+        <td ng-if="player3_scoreSub">{{player3_scoreSub}}</td>
+        <td ng-if="player4_scoreSub">{{player4_scoreSub}}</td>
+      </tr>
+      <tr ng-if="playFinalGame()">
+        <td><input type="text" class="custom-input" name="player1_score" ng-class="lostItr(players[0].score) ? 'lost-iter': '' " ng-model="players[0].score" ng-change="updateScore()" placeholder="Score "></td>
+        <td><input type="text" class="custom-input" name="player2_score" ng-class="lostItr(players[1].score) ? 'lost-iter': '' " ng-model="players[1].score" ng-change="updateScore()" placeholder="Score "></td>
+        <td><input type="text" class="custom-input" name="player3_score" ng-class="lostItr(players[2].score) ? 'lost-iter': '' " ng-model="players[2].score" ng-change="updateScore()" placeholder="Score "></td>
+        <td><input type="text" class="custom-input" name="player4_score" ng-class="lostItr(players[3].score) ? 'lost-iter': '' " ng-model="players[3].score" ng-change="updateScore()" placeholder="Score "></td>
+      </tr>
+      <tr class="sub-total" ng-if="playFinalGame()">
+        <td >{{players[0].score}}</td>
+        <td >{{players[1].score}}</td>
+        <td >{{players[2].score}}</td>
+        <td >{{players[3].score}}</td>
+      </tr>
     </tbody>
   </table>
 
