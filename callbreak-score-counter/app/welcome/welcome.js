@@ -9,6 +9,37 @@ angular.module('myApp.welcome', ['ngRoute'])
     });
 }])
 
-.controller('WelcomeCtrl', ['$scope','CommonProp', function($scope,CommonProp) {
+.controller('WelcomeCtrl', ['$scope','CommonProp', '$location', function($scope,CommonProp, $location) {
 	$scope.username = CommonProp.getUser();
+
+	if(!$scope.username) {
+		$location.path('/home');
+	}
+
+	$scope.logout = function() {
+    	CommonProp.logoutUser();
+	}
+
+	$scope.players = [
+		{
+			'id': 'player1',
+			'score' : 0,
+			'name' :''
+		},
+		{
+			'id': 'player2',
+			'score' : 0,
+			'name' :''
+		},
+		{
+			'id': 'player3',
+			'score' : 0,
+			'name' :''
+		},
+		{
+			'id': 'player4',
+			'score' : 0,
+			'name' :''
+		}
+	];
 }]);

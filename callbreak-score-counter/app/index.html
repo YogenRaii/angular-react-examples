@@ -4,22 +4,30 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Card Score Counter</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" type="text/css" href="css/justified-nav.css">
 
-    <link href="https://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
   <div ng-view></div>
 
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted text-center">&copy; Yogen 2017</p>
+    </div>
+  </footer>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <!-- AngularJS -->
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
@@ -27,7 +35,7 @@
   
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
-<script>
+  <script>
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyAXZNj3D6juQwJb7lKGO_ZpZzHxyH-bwkM",
@@ -45,6 +53,7 @@
   <script src="app.js"></script>
   <script src="home/home.js"></script>
   <script src="register/register.js"></script>
+  <script src="history/history.js"></script>
   <script src="welcome/welcome.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>

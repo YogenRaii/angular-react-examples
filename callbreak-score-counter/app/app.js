@@ -5,7 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.home',
   'myApp.register',
-  'myApp.welcome'
+  'myApp.welcome',
+  'myApp.history'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
