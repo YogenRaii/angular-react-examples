@@ -1,0 +1,52 @@
+<div class="survey-form">
+	<form ng-submit="submit()" name="feedbackForm">
+		<div class="col-lg-12">
+			<div class="col-lg-6">
+				<h3>10-Star Rating</h3>
+			</div>
+			<div class="credentials col-lg-6">
+				<div class="form-horizontal pull-right">
+					<div class="form-group">
+						<label class="control-label col-sm-6" for="name">Name: </label>
+						<div class="col-sm-6">
+							<input type="name" ng-model="passenger.name" class="form-control" id="name" placeholder="Enter Name" required>
+						</div>
+						<span class="help-inline" ng-show="submitted && feedbackForm.name.$error.required">Required</span>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-6" for="seatId">Seat ID:</label>
+						<div class="col-sm-6">          
+							<input type="text" ng-model="passenger.seatId" class="form-control" id="seatId" placeholder="Enter Seat ID" required>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="rating-form col-lg-12">
+			<div class="row" ng-repeat="rating in ratings">
+				<div class="col-lg-4">
+					<label for="ratingTitle"><h4 class="input-label">{{rating.title}}</h4></label>
+				</div>
+				<div class="col-lg-8">
+					<span star-rating rating="0" read-only="false" max-rating="10" click="click(param, rating.id)" mouse-hover="mouseHover(param, rating.id)" mouse-leave="mouseLeave(param, rating.id)"></span>
+					<span class="label label-primary">Star Rating: {{rating.starRating}}</span>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4">
+					<label for="commentBox"><h4 class="input-label">Comments</h4></label>
+				</div>
+				<div class="col-lg-8">
+					<textarea rows="4" class="col-lg-8" ng-model = "ratings.comment" name="commentBox"></textarea>
+				</div>
+			</div>
+			<div class="col-lg-8">
+
+				<button type="submit" ng-click="submitted=true" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+	</form>
+</div>
+<script>
