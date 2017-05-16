@@ -14,7 +14,7 @@
 <script>
 	$(document).ready(function(){
 
-		$("#email").on('keypress input',function(){
+		$("#email").on('keypress',function(){
 			var emails = $("#email").val();
 			if(validateEmails(emails)){
 				console.log("ok");

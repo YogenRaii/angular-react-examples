@@ -4,12 +4,15 @@ import { ActivatedRoute } from '@angular/router';
 
 import { HeroService } from './hero.service';
 
+import { ROUTER_DIRECTIVES } from '@angular/router';
+
 import { Hero } from './hero';
 
 @Component({
 	selector: 'my-hero-detail',
 	templateUrl : 'app/hero-detail.component.html',
-	styleUrls:['app/hero-detail.component.css']
+	styleUrls:['app/hero-detail.component.css'],
+	directives: [ROUTER_DIRECTIVES]
 })
 
 export class HeroDetailComponent implements OnInit, OnDestroy {

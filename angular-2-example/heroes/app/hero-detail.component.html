@@ -6,4 +6,12 @@
 	</div>
 	<button (click) = "goBack()">Back</button>
 	<button (click) = "save()">Save</button>
+
+<!-- added -->
+	<nav>
+			<a [routerLink]="['/inner-dashboard']" routerLinkActive = "active">Inner Dashboard</a>
+			<a [routerLink]="['/my-heroes']" routerLinkActive = "active">My Heroes</a>
+	</nav>
+	<my-inner-dashboard></my-inner-dashboard>
+<!-- end of added -->
 </div>
