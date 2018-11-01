@@ -1,2 +1,4 @@
 node_modules
 html-snapshot/node_modules
+
+*.DS_Store
