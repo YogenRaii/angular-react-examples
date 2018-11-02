@@ -4,3 +4,5 @@ html-snapshot/node_modules
 *.DS_Store
 
 *package-lock.json
+*.tmp/
+*bower_components
