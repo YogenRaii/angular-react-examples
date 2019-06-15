@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from '../services/cart.service';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
@@ -8,12 +9,26 @@ import {CartService} from '../services/cart.service';
 })
 export class CartComponent implements OnInit {
   cartItems;
+  checkoutForm;
 
-  constructor(private cartService: CartService) {
+  constructor(private formBuilder: FormBuilder,
+              private cartService: CartService) {
     this.cartItems = this.cartService.getItems();
+
+    this.checkoutForm = this.formBuilder.group({
+      name: '',
+      address: ''
+    });
   }
 
   ngOnInit() {
   }
 
+  onSubmit(customerData) {
+    console.log('Process data: ', customerData);
+
+    this.cartItems = this.cartService.clearCart();
+
+    this.checkoutForm.reset();
+  }
 }
