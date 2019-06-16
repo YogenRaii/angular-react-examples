@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Hero} from '../models/hero';
 import {HEROES} from '../models/mock-heroes';
@@ -11,7 +11,12 @@ import {MessageService} from './message.service';
 export class HeroService {
 
   constructor(private http: HttpClient,
-              private messageService: MessageService) { }
+              private messageService: MessageService) {
+  }
+
+  getHero(id): Observable<Hero> {
+    return of(HEROES.find(hero => id === hero.id));
+  }
 
   getHeroes(): Observable<Hero[]> {
     this.messageService.addMessage('HeroService: fetched heroes');

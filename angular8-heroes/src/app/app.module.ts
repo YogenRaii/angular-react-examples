@@ -10,13 +10,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {HeroService} from './services/hero.service';
 import { MessageComponent } from './message/message.component';
 import {MessageService} from './services/message.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessageComponent
+    MessageComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
