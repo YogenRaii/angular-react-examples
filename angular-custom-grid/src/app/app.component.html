@@ -1,0 +1,92 @@
+<div class="container">
+  <form action="">
+    <div class="section">
+      <div class="heading">General</div>
+      <div class="row">
+
+        <div class="col-50">
+          <label for="fname">First Name First Name First Name First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        </div>
+
+        <div class="col-50">
+          <label for="lname">Last Name Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-50">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+          <!-- <mat-form-field appearance="fill">
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field> -->
+        </div>
+
+        <div class="col-50">
+          <label for="subject">Subject</label>
+          <input id="subject" type="text" name="subject" placeholder="Write something..">
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="heading">Admin</div>
+      <div class="row">
+
+        <div class="col-50">
+          <label for="fname">Select Gender</label>
+
+          <mat-radio-group>
+            <mat-radio-button *ngFor="let season of seasons">
+              {{season}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+      </div>
+      <div class="row">
+        <i style="margin:200px">Seelct one</i>
+      </div>
+      <div class="row">
+        <div class="col-50">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        </div>
+
+        <div class="col-50">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        </div>
+        <div class="row">
+          <div class="col-50">
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+          </div>
+
+          <div class="col-50">
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" name="subject" placeholder="Write something..">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
