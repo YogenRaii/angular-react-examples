@@ -1,0 +1,24 @@
+::ng-deep .mat-paginator {
+    .mat-paginator-container {
+        justify-content: left;
+    }
+
+    // override material paginator page switch
+    .mat-paginator-navigation-first {
+        order: 1;
+    }
+    .mat-paginator-range-label {
+        // display: none;
+        order: 3;
+    }
+
+    .mat-paginator-navigation-previous {
+        order: 2;
+    }
+    .mat-paginator-navigation-next {
+        order: 4;
+    }
+    .mat-paginator-navigation-last {
+        order: 5;
+    }
+}
